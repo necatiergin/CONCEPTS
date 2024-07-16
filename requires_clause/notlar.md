@@ -1,4 +1,4 @@
-Bir _requires clause_ _requires_ anahtar sözcüğü ve bir derleme zamanı_ boolean_ ifadeden oluşur. Nitelediği _template_'in kullanımını kısıtlar _(constrains)_<br>
+Bir _requires clause_ _requires_ anahtar sözcüğü ve bir derleme zamanı _boolean_ ifadeden oluşur. Nitelediği _template_'in kullanımını kısıtlar _(constrains)_<br>
 Boolean ifade şunlardan biri olabilir:<br>
   • Tek başına bir derleme zamanı ifadesi
   • Bir _concept_
