@@ -1,5 +1,5 @@
 template <typename T>
-requires requires(T x)		//valid syntax  requires clause + requires expression
+requires requires(T x)		//valid syntax:  requires clause + requires expression
 {
     x + x;
 } 
