@@ -1,5 +1,6 @@
 #include <memory>
 #include <optional>
+#include <string>
 
 template <typename T>
 concept nec = requires(T p)
@@ -17,4 +18,5 @@ int main() {
     static_assert(nec<std::nullptr_t>);  // valid
     static_assert(nec<std::optional<int*>>);  // valid
     static_assert(nec<std::optional<int>>);  //invalid
+    static_assert(nec<std::string>);  //invalid
 }
