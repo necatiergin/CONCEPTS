@@ -10,5 +10,5 @@
 - template argümanlarına yönelik hata mesajları çok daha kısa ve anlaşılır hale geliyor.
 - _concept_'ler generik programlama tarafında _"placeholder"_ olarak kullanılabiliyor.
 - kendi _concept_'lerimizi oluşturabiliyoruz.
-- hem fonksiyon şablonlarında hem de sınıf şablonlarında kullanılabiliyoruz.
+- hem fonksiyon şablonlarında hem de sınıf şablonlarında kullanabiliyoruz.
 - non-type paramereler için de kullanabiliyoruz. 
