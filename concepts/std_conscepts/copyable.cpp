@@ -1,6 +1,5 @@
 #include <concepts>
 
-
 template <std::copyable T>
 class Myclass {
 	//...
