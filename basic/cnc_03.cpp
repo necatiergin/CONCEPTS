@@ -7,7 +7,6 @@ void func(ref_or_ptr  auto x);
 
 int main()
 {
-
 	int x{};
 
 	//func(x);  //error
