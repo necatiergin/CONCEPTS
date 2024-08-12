@@ -5,7 +5,7 @@
 template<typename T>
 concept IsPointer = requires(T p) { *p; };
 ```
-* _requires expression_ ile türler ya da parametrelere ilişkin bir yada birden fazla ister _(requirement)_ tanımlanabilir.
+* _requires expression_ ile türler ya da parametrelere ilişkin bir ya da birden fazla ister _(requirement)_ tanımlanabilir.
 
 * Daha karmaşık bir örneğe bakalım:
 
