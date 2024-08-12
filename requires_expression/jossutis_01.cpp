@@ -49,8 +49,6 @@ auto val = maxValue(coll.begin(), pos); // ERROR
 The reason is that we require the parameters to be comparable with nullptr, which is not required to be
 supported by iterators. Whether or not this is what you want is a design question. However, this example
 demonstrates that it is important to think carefully about the definition of general concepts.
-
-
 */
 
 
