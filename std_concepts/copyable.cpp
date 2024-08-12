@@ -5,7 +5,6 @@ class Myclass {
 	//...
 };
 
-
 struct A { };
 
 struct B {
