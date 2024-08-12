@@ -1,7 +1,6 @@
 #include <concepts>
 #include <vector>
 
-
 template<typename T>
 requires (sizeof(T) > 2) // ad-hoc Boolean expression
 && requires { typename T::value_type; } // requires expression
