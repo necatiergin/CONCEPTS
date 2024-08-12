@@ -17,12 +17,10 @@ void foo(SignedIntegral auto x)
 {
     std::cout << "SignedIntegral: " << x << '\n';
 }
-
 void foo(UnsignedIntegral auto x)
 {
     std::cout << "UnsignedIntegral: " << x << '\n';
 }
-
 int main()
 {
     foo(-1);
