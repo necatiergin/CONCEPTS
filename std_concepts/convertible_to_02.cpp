@@ -3,7 +3,6 @@
 #include <string>
 #include <memory>
 
-
 template <std::convertible_to<bool> T>
 void foo(T x)
 {
