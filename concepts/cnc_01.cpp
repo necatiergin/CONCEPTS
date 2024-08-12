@@ -12,7 +12,7 @@ T gcd1(T a, T b)
 }
 
 
-template<std::integral T> //constraine template parameter
+template<std::integral T> //constrained template parameter
 T gcd2(T a, T b)
 {
     if (b == 0)
