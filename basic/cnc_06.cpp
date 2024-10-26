@@ -13,8 +13,6 @@ public:
 
 struct Erg { };
 
-
-
 int main(void)
 {
 	func(12); //OK
