@@ -1,3 +1,5 @@
+// concepts can constain not-type template parameter
+
 #include <concepts>
 
 template <std::floating_point auto DVAL>
