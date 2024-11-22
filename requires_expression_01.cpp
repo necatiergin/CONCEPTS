@@ -1,5 +1,6 @@
 // From Nicholai Jossutis C++20 book.
 // http://cppstd20.com/code/lang/maxvalue.cpp.html
+
 #include <iostream>
 
 // concept for pointer-like objects:
