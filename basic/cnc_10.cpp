@@ -1,10 +1,9 @@
-
 #include <concepts>
 #include <string>
 
 template <typename T, std::convertible_to<T> auto val>
 class Myclass {
-
+	//...
 };
 
 struct A {
@@ -12,7 +11,6 @@ struct A {
 };
 
 struct B {};
-
 
 char name[] = "necati";
 
