@@ -1,7 +1,9 @@
+// require expression
+
 template<typename T1, typename T2>
 concept nec = requires(T1 x, T2 y)
 {
-    x > y && *x < *y;
+    x > y && *x < *y; //simple requirement
 };
 
 int main()
