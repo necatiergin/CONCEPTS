@@ -61,3 +61,46 @@ requires sizeof(T) > 2 && sizeof(U) > 2  //geçersiz
 requires (sizeof(T) > 2) && (sizeof(U) > 2) // geçerli
 requires std::integral<T> && std::floating_point<U> //geçerli
 ```
+aşağıdaki kodlarda geçerli _require clause_'lar için örnekler veriliyor:
+```cpp
+#include <type_traits>
+#include <concepts>
+#include <string>
+
+template<typename T>
+requires (sizeof(long long) > sizeof(long))
+class C1 {};
+
+template<typename T>
+requires (sizeof(T) > 1)
+class C2 {};
+
+template<int N>
+requires (N > 0)
+class C3 {};
+
+template<typename T>
+requires std::is_pointer_v<T> || std::is_same_v<T, std::nullptr_t>
+class c4 {};
+
+template<typename T>
+requires std::is_pointer_v<T> || std::same_as<T, std::nullptr_t>
+class c5 {};
+
+template<typename T>
+requires (!std::is_convertible_v<T, std::string>)
+class C6 {};
+
+template<typename T>
+requires (!std::convertible_to<T, std::string>)
+class c7 {};
+
+template<typename T>
+requires std::integral<std::remove_reference_t<decltype(*std::declval<T>())>>
+class C8 {};
+
+
+template<typename T>
+requires false 
+class C9 {};
+```
