@@ -54,7 +54,7 @@ auto foo(T t, U u)
 ```
 
 _&&_ ve _||_ operatörlerinin operandı olan derleme zamanı ifadelerinin parantez içine alınması gerekmez.
-Ancak _ad hoc boolean_ ifadelerin parantez içine yazılması gerekir
+Ancak _ad hoc boolean_ ifadelerin parantez içine yazılması gerekir:
 
 ```cpp
 requires sizeof(T) > 2 && sizeof(U) > 2  //geçersiz
