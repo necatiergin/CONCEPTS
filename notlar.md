@@ -104,3 +104,6 @@ template<typename T>
 requires false 
 class C9 {};
 ```
+
+
+**kaynak: C++20 The Complete Guide by Nicholai Jossutis**
