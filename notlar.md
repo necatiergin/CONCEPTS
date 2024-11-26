@@ -1,3 +1,6 @@
+_C++20 _ standardı ile dile eklenen concept'ler ve bunlara ilişkin araçlar ve standart kütüphane öğeleriyle şablonların _(templates)_ belirli türler ya da değerler için kullanımlarını kısıtlayabilir _(constrain)_ ve bunları kullanarak türden bağımsız _(generic)_ kodlarda derleme zamanında kod seçimi yaptırabiliriz.
+
+
 #### concept'ler hangi faydaları sağlıyor?
 
 - template kodları yazmayı ve _debug_ etmeyi kolaylaştırıyor.
