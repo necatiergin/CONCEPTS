@@ -9,10 +9,10 @@ void foo(T x) {
 	
 }
 
-// constraint'lerin karşılanması için
-// a) T türünün sizeof değeri 4'den  büyük olmalı
-// b) T türünün value_type isimli 
-// c) T türü standart std::input_iterator concept'ini karşılamalı (satisfy)
+// to satisfy the constarints
+// a) sizeof(T) should be greater than 2
+// b) type T should have a nested type named value_type
+// c) type T should satisfy the standard concept  std::input_iterator
 
 int main()
 {
