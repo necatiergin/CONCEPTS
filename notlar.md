@@ -114,5 +114,19 @@ _requires expression_ ile aşağıdaki belirlemeler yapılabilir:
 - ifadelerin türleri
 - ifadelerin yürütülmesi durumunda exception gönderilmeme garantisi
 
+- Bir _requires expression_ requires anahtar sözcüğü ile başlar. Bu anahtar sözcükten sonra opsiyonel  bir parameter listesi bulunabilir. Daha sonra yer alan bir blok içinde gereklilikler ifade edilir. Her bir gereklilik noktalı virgül atomu ile sonlandırılır.
+
+```cpp
+template<typename Container>
+requires 
+requires {
+	typename Container::value_type::first_type; // elements/values have first_type
+	typename Container::value_type::second_type; // elements/values have second_type
+}
+void foo(const Container&)
+{
+
+}
+```
 
 **kaynak: C++20 The Complete Guide by Nicholai Jossutis**
