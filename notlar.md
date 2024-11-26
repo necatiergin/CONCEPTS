@@ -104,6 +104,15 @@ template<typename T>
 requires false 
 class C9 {};
 ```
+#### requires expression
+_requires expression_ _requires clause_'dan farklıdır.
+_requires expression_ bir ya da birden fazla template parametresinin kısıtlanması için basit ve esnek bir sentaks sağlar.
+_requires expression_ ile aşağıdaki belirlemeler yapılabilir:
+
+- var olması gereken türler (nested types)
+- geçerli olması gereken ifadeler
+- ifadelerin türleri
+- ifadelerin yürütülmesi durumunda exception gönderilmeme garantisi
 
 
 **kaynak: C++20 The Complete Guide by Nicholai Jossutis**
