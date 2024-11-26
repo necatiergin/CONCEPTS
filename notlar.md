@@ -24,7 +24,7 @@ Boolean ifadeler şunlardan biri olabilir:<br>
 
 Tüm _constraintler_ bir _boolean_ ifadenin kullanılabildiği  her yerde kullanılabilir.<br>
 _Requires clause_'da birden fazla kısıtlamayı _(constraints)_ && operatörünü kullanarak kombine edebiliriz.
-Eğer kısıtlamalardan birinin karşılanması yeterli ise || operatörünü kullanabiliriz. 
+Eğer kısıtlamalardan birinin karşılanması yeterli ise yani alternatif kısıtlamalar oluşturmak istersek || operatörünü kullanabiliriz. 
 ```cpp
 #include <iterator>
 template<typename T>
@@ -37,4 +37,18 @@ void foo(T x) {
 }
 ```
 
-Kısıtlamaların sıralaması bir anlam farklılığı oluşturmaz.
+Kısıtlamaların sıralaması bir anlam farklılığı oluşturmaz.<br>
+Kısıtlamalarda || operatörü seyrek olarak kullanılır. Sık kullanımı derleme zamanını uzatabilir.<br>
+_requires clause_'da birden fazla template parametresi kullanılabilir. Böylece _template_ parametreleri arasındaki ilişkiler kısıtlanabilir:
+
+```cpp
+#include <type_traits>
+
+template<typename T, typename U>
+requires std::convertible_to<T, U>
+auto foo(T t, U u) 
+{
+	//...	
+	return t + u;
+}
+```
