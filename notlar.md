@@ -128,5 +128,6 @@ void foo(const Container&)
 
 }
 ```
+**devam edecek...**
 
 **kaynak: C++20 The Complete Guide by Nicholai Jossutis**
