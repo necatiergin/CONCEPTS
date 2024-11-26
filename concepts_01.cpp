@@ -8,7 +8,6 @@ T sum1(T a, T b)
     return a + b;
 }
 
-
 template<std::integral T> //constrained template parameter
 T sum2(T a, T b)
 {
