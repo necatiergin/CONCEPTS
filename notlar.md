@@ -108,10 +108,10 @@ _requires expression_ bir ya da birden fazla template parametresinin kısıtlanm
 - ifadelerin türleri
 - ifadelerin yürütülmesi durumunda _exception_ gönderilmeme garantisi
 
-Bir _requires expression_ requires anahtar sözcüğü ile başlar. Bu anahtar sözcükten sonra opsiyonel bir parameter listesi bulunabilir. Daha sonra yer alan bir blok içinde gereklilikler ifade edilir. Her bir gereklilik noktalı virgül atomu ile sonlandırılır. Bir requires expression içinde şunlardan biri bulunabilir:
+Bir _requires expression_ _requires_ anahtar sözcüğü ile başlar. Bu anahtar sözcükten sonra opsiyonel bir parameter listesi bulunabilir. Daha sonra yer alan bir blok içinde gereklilikler ifade edilir. Her bir gereklilik noktalı virgül atomu ile sonlandırılır. Bir _requires expression_ içinde şunlardan biri bulunabilir:
 
 ##### simple requirements
-Bir ifadenin geçerliliği sınanır. İfade geçerli değilse _requires expression_ _false_ değer üretir. Geçerliliği sınananifade yürütülmez _(unevaluated context)_.
+Bir ifadenin geçerliliği sınanır. İfade geçerli değilse _requires expression_ _false_ değer üretir. Geçerliliği sınanan ifade yürütülmez _(unevaluated context)_.
 
 ##### type requirements
 Belirtilen türün geçerliliği sınanır. Böyle bir tür mümkün değil ise _requires expression_ _false_ değer üretir.
@@ -123,7 +123,7 @@ Bir ifadenin sağlaması gereken niteliklerini belirler.
 - ifadenin _noexcept_ olması 
 
 ##### nested requirements
-requires anahtar sözcüğü ile belirtilen koşullar
+_requires_ anahtar sözcüğü ile belirtilen koşullar
 
 Aşağıdaki kodda tanımlanan _Nec concept_'inde bir _requires expression_ kullanılıyor:
 ```
@@ -137,7 +137,7 @@ concept Nec = requires(T x)
     ++x; //T türünden nesneler önek arttırma operatörüne operand olabilirler
     
     //type requirement
-    typename T::size_type;  // T türünün içsel size_type isimli bir türü var
+    typename T::size_type;  // T türünün içsel _size_type_ isimli bir türü var
     
     // compound requirements
     { x * x } -> std::convertible_to<T>;      
