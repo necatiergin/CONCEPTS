@@ -1,6 +1,10 @@
+//concept necval below uses a requires expression.
+// the requires expression has a type requirement.
+// type C should have a nested type named value_type
+
 template<typename C>
 concept necval = requires {
-    typename C::value_type;
+    typename C::value_type;  
 };
 
 struct A
