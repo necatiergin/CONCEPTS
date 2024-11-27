@@ -4,14 +4,14 @@ template <typename T>
 concept Pointer = std::is_pointer_v<T>;
 
 template <typename T>
-requires Pointer<T> 
+requires Pointer<T>  //requires clause
 class Foo {
-
+	//...
 };
 
 template <Pointer T>
 class Bar {
-
+	//...
 };
 
 int main()
