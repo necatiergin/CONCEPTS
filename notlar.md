@@ -138,17 +138,20 @@ template <typename T>
 concept Nec = requires(T x)
 {
     //simple requirements
-    x == x;                                   // equality comparable
-    ++x;                                      // pre-incrementable
+    x == x;  // T türünden nesneler == operatörü ile karşılaştırılabilirler
+    ++x; //T türünden nesneler önek arttırma operatörüne operand olabilirler
     
     //type requirement
-    typename T::size_type;                   // has nested type member size_type
+    typename T::size_type;  // T türünün içsel size_type isimli bir türü var
     
     // compound requirements
-    { x * x } -> std::convertible_to<T>;      // x * x is e valid valid expression the generated value is covertible to type T
+    { x * x } -> std::convertible_to<T>;      
+    // x * x gecerli bir ifade ve ürettiği değer T türüne dönüştürlebilir 
+
 
     // nested requirements
-    requires std::same_as<T, decltype(&x)>;  // address of operator generates the same type as T*
+    requires std::same_as<T, decltype(&x)>;  
+	// adres operatörünün ürettiği değerin türü T* türü
 };
 ```
 
