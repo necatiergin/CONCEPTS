@@ -105,16 +105,30 @@ requires false
 class C9 {};
 ```
 #### requires expression
-_requires expression_ _requires clause_'dan farklıdır.
-_requires expression_ bir ya da birden fazla template parametresinin kısıtlanması için basit ve esnek bir sentaks sağlar.
-_requires expression_ ile aşağıdaki belirlemeler yapılabilir:
+_template_'ler üzerinde gereklilikler _(requirements)_ başka bir yolu bir _requires expression_ oluşturmaktır. Bir _requires expression_ derleme zamanında ele alınan ve _bool_ türden değer oluşturan bir ifadedir. Böyle bir ifade, belirtilen gereklilikler karşılanırsa _true_ değeri aksi halde _false_ değeri üretir. 
+Derleme zamanında _bool_ türden bir değer kullanılan herhangi bir yerde bir _requires expression_ kullanılabilir.
+_requires expression_ bir _template_'den kod üretildiğinde _(template instantiation)_ ele alınır. 
+Gövdesi _(body)_ boş olan bir _requires expression_ _true_ değeri üretir.
 
-- var olması gereken türler (nested types)
+_requires expression_ _requires clause_'dan farklı yapılardır.
+_requires expression_ bir ya da birden fazla template parametresinin kısıtlanması için basit ve esnek bir sentaks sağlar. _requires expression_ ile aşağıdaki belirlemeler yapılabilir:
+
+- var/geçerli olması gereken türler _(nested types)_
 - geçerli olması gereken ifadeler
 - ifadelerin türleri
-- ifadelerin yürütülmesi durumunda exception gönderilmeme garantisi
+- ifadelerin yürütülmesi durumunda _exception_ gönderilmeme garantisi
 
-- Bir _requires expression_ requires anahtar sözcüğü ile başlar. Bu anahtar sözcükten sonra opsiyonel  bir parameter listesi bulunabilir. Daha sonra yer alan bir blok içinde gereklilikler ifade edilir. Her bir gereklilik noktalı virgül atomu ile sonlandırılır.
+Bir _requires expression_ requires anahtar sözcüğü ile başlar. Bu anahtar sözcükten sonra opsiyonel bir parameter listesi bulunabilir. Daha sonra yer alan bir blok içinde gereklilikler ifade edilir. Her bir gereklilik noktalı virgül atomu ile sonlandırılır. Bir requires expression içinde şunlardan biri bulunabilir:
+
+- simple requirements
+Bir ifadenin geçerliliği sınanır. İfade geçerli değilse re false değer üretir.
+Bu ifade yürütülmez. (unevaluated context)
+
+- type requirements: belirtilen tür geçerliliği sınanır. Böyle bir tür mümkün değil ise re false değer üretit.
+
+- compound requirements
+
+- nested requirements
 
 ```cpp
 template<typename Container>
