@@ -117,8 +117,13 @@ Bir ifadenin geçerliliği sınanır. İfade geçerli değilse _requires express
 Belirtilen türün geçerliliği sınanır. Böyle bir tür mümkün değil ise _requires expression_ _false_ değer üretir.
 
 ##### compound requirements
+Bir ifadenin sağlaması gereken niteliklerini belirler. 
+- İfadenin türü
+- ifadenin türünün sağlaması gereken özellikler
+- ifadenin _noexcept_ olması 
 
 ##### nested requirements
+requires anahtar sözcüğü ile belirtilen koşullar
 
 Aşağıdaki kodda tanımlanan _Nec concept_'inde bir _requires expression_ kullanılıyor:
 ```
@@ -144,8 +149,35 @@ concept Nec = requires(T x)
 	// adres operatörünün ürettiği değerin türü T* türü
 };
 ```
+#### conceptler nasıl ve nerelerde kullanılır?
+bir concept bir require clause'un ifadesi ya da ifadelerinden biri olabilir:
+```cpp
+#include <concepts>
 
+template <typename T>
+requires std::integral<T>
+void foo(T x)
+{
+	// ...
+}
+```
+Yukarıdaki kodda _foo_ isimli fonksiyonu kısıtlayan _requires clause_'un ifadesi olarak standart bir _concept_ olan _std::integral_ kullanılıyor.
 
+_concept_'ler _template_ tür parametresi yerine kullanılabilir:
+
+```
+#include <concepts>
+
+template <std::integral T>
+void foo(T x)
+{
+	// ...
+}
+```
+ 
+
+#### standart concept'ler
+Standart kütüphane hazır olarak kullanabileceğimiz birçok _concept_ sunmaktadır.  
 
 **devam edecek...**
 
