@@ -174,7 +174,7 @@ void foo(T x)
 	// ...
 }
 ```
-Kısaltılmış (abbreviated) template sentaksı ile fonksiyon şablonlarının parametrelerinde kullanılır:
+Kısaltılmış _(abbreviated) template_ sentaksı ile fonksiyon şablonlarının parametrelerinde kullanılır:
 ```cpp
 auto square(std::integral auto x)
 {
@@ -183,6 +183,37 @@ auto square(std::integral auto x)
 }
 ```
 
+_template_'lerde _bool_ türden bir sabit ifadesi kullanılabilen tüm sentaks yapılarında kullanılabilir:
+Örneğin _if constexpr_ deyiminin ifadesi olarak:
+
+```
+#include <concepts>
+#include <iostream>
+
+template <typename T>
+void func(T)
+{
+	if constexpr (std::integral<T>) {
+		std::cout << "code for integer types\n";
+	}
+	else if constexpr (std::floating_point<T>) {
+		std::cout << "code for floating types\n";
+	}
+	else {
+		std::cout << "code for other types\n";
+	}
+}
+
+int main()
+{
+	func(12);
+	func(1.2);
+	func("john");
+}
+```
+
+
+ 
 
 #### standart concept'ler
 Standart kütüphane hazır olarak kullanabileceğimiz birçok _concept_ sunmaktadır.  
