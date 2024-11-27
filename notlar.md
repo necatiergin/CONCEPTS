@@ -120,28 +120,40 @@ _requires expression_ bir ya da birden fazla template parametresinin kısıtlanm
 
 Bir _requires expression_ requires anahtar sözcüğü ile başlar. Bu anahtar sözcükten sonra opsiyonel bir parameter listesi bulunabilir. Daha sonra yer alan bir blok içinde gereklilikler ifade edilir. Her bir gereklilik noktalı virgül atomu ile sonlandırılır. Bir requires expression içinde şunlardan biri bulunabilir:
 
-- simple requirements
-Bir ifadenin geçerliliği sınanır. İfade geçerli değilse re false değer üretir.
-Bu ifade yürütülmez. (unevaluated context)
+##### simple requirements
+Bir ifadenin geçerliliği sınanır. İfade geçerli değilse _requires expression_ _false_ değer üretir. Geçerliliği sınananifade yürütülmez _(unevaluated context)_.
 
-- type requirements: belirtilen tür geçerliliği sınanır. Böyle bir tür mümkün değil ise re false değer üretit.
+##### type requirements
+Belirtilen türün geçerliliği sınanır. Böyle bir tür mümkün değil ise _requires expression_ _false_ değer üretir.
 
-- compound requirements
+##### compound requirements
 
-- nested requirements
+##### nested requirements
 
-```cpp
-template<typename Container>
-requires 
-requires {
-	typename Container::value_type::first_type; // elements/values have first_type
-	typename Container::value_type::second_type; // elements/values have second_type
-}
-void foo(const Container&)
-{
-
-}
+Aşağıdaki kodda tanımlanan _Nec concept_'inde bir _requires expression_ kullanılıyor:
 ```
+#include <concepts>
+
+template <typename T>
+concept Nec = requires(T x)
+{
+    //simple requirements
+    x == x;                                   // equality comparable
+    ++x;                                      // pre-incrementable
+    
+    //type requirement
+    typename T::size_type;                   // has nested type member size_type
+    
+    // compound requirements
+    { x * x } -> std::convertible_to<T>;      // x * x is e valid valid expression the generated value is covertible to type T
+
+    // nested requirements
+    requires std::same_as<T, decltype(&x)>;  // address of operator generates the same type as T*
+};
+```
+
+
+
 **devam edecek...**
 
 **kaynak: C++20 The Complete Guide by Nicholai Jossutis**
