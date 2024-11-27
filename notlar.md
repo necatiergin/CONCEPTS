@@ -174,7 +174,15 @@ void foo(T x)
 	// ...
 }
 ```
- 
+Kısaltılmış (abbreviated) template sentaksı ile fonksiyon şablonlarının parametrelerinde kullanılır:
+```cpp
+auto square(std::integral auto x)
+{
+	//...
+	return x * x;
+}
+```
+
 
 #### standart concept'ler
 Standart kütüphane hazır olarak kullanabileceğimiz birçok _concept_ sunmaktadır.  
