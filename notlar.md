@@ -2,7 +2,6 @@ _C++20_ standardı ile dile eklenen _concept_'ler ve bunlara ilişkin araçlar v
 
 
 #### concept'ler hangi faydaları sağlıyor?
-
 - template kodları yazmayı, okumayı ve _debug_ etmeyi kolaylaştırıyor:  _TMP for everybody_
 - template parametrelerine yönelik kısıtlamalar arayüzün _(interface)_ bir bileşeni hale geliyor. Bir _template_'a baktığımızda onun kısıtlamalarını doğrudan görebiliyoruz.
 - _function overloading_ mekanizamasını destekliyor. Farklı kısıtlamalara göre fonksiyonları _overload_ edebiliyoruz.
@@ -69,40 +68,31 @@ aşağıdaki kodlarda geçerli _require clause_'lar için örnekler veriliyor:
 
 template<typename T>
 requires (sizeof(long long) > sizeof(long))
-class C1 {};
 
 template<typename T>
 requires (sizeof(T) > 1)
-class C2 {};
 
 template<int N>
 requires (N > 0)
-class C3 {};
 
 template<typename T>
 requires std::is_pointer_v<T> || std::is_same_v<T, std::nullptr_t>
-class c4 {};
 
 template<typename T>
 requires std::is_pointer_v<T> || std::same_as<T, std::nullptr_t>
-class c5 {};
 
 template<typename T>
 requires (!std::is_convertible_v<T, std::string>)
-class C6 {};
 
 template<typename T>
 requires (!std::convertible_to<T, std::string>)
-class c7 {};
 
 template<typename T>
 requires std::integral<std::remove_reference_t<decltype(*std::declval<T>())>>
-class C8 {};
-
 
 template<typename T>
 requires false 
-class C9 {};
+
 ```
 #### requires expression
 _template_'ler üzerinde gereklilikler _(requirements)_ başka bir yolu bir _requires expression_ oluşturmaktır. Bir _requires expression_ derleme zamanında ele alınan ve _bool_ türden değer oluşturan bir ifadedir. Böyle bir ifade, belirtilen gereklilikler karşılanırsa _true_ değeri aksi halde _false_ değeri üretir. 
