@@ -125,6 +125,7 @@ Bir ifadenin sağlaması gereken niteliklerini belirler.
 ##### nested requirements
 _requires_ anahtar sözcüğü ile belirtilen koşullar
 
+
 Aşağıdaki kodda tanımlanan _Nec concept_'inde bir _requires expression_ kullanılıyor:
 ```
 #include <concepts>
