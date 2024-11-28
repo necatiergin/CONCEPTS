@@ -1,3 +1,5 @@
+//simple requirement
+
 template <typename T>
 concept nec = requires(T a, T b)  //requires expression
 {
