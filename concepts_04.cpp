@@ -18,8 +18,8 @@ int main()
 {
 	Foo<int *> x1;
 	Bar<double *> x2;
-	Foo<int> x3; //error
-	Bar<double> x4; //error 
+	//Foo<int> x3; //error
+	//Bar<double> x4; //error 
 }
 
 
