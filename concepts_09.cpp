@@ -1,4 +1,4 @@
-// concepts can constain not-type template parameter
+// concepts can constrain non-type template parameter
 
 #include <concepts>
 
