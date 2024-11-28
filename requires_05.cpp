@@ -1,7 +1,6 @@
 #include <concepts>
 #include <iostream>
 
-
 template<std::integral T>   //std::integral is a standard concept
 class Tclass {
 
