@@ -10,8 +10,6 @@ class Myclass {
 	//...
 };
 
-#include <optional>
-
 int main()
 {
 	Myclass<int, int*> m1;
