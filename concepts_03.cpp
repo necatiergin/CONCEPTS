@@ -3,7 +3,7 @@
 template <typename T>
 concept ref_or_ptr = std::is_pointer_v<T> || std::is_reference_v<T>;
 
-// constarined abbreviated template parameter
+// constrained abbreviated template parameter
 void func(ref_or_ptr  auto x);
 
 int main()
