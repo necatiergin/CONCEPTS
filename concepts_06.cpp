@@ -1,9 +1,9 @@
 #include <type_traits>
 
 template <typename T>
-concept like_int = std::is_integral_v<T> || std::is_convertible_v<T, int>;
+concept intlike = std::is_integral_v<T> || std::is_convertible_v<T, int>;
 
-template <like_int T>
+template <intlike T>
 void func(T x);
 
 struct Nec {
@@ -17,5 +17,5 @@ int main(void)
 {
 	func(12); //OK
 	func(Nec{}); //OK
-	func(Erg{}); //error
+	//func(Erg{}); //error
 }
