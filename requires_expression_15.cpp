@@ -1,10 +1,8 @@
 template<typename T, typename P>
 concept Con = requires(T tval, P p) {
-	*p;
 	*p < tval;
 	p == nullptr;
 };
-
 
 template <typename T, typename P>
 requires Con<T, P>
