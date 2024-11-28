@@ -10,8 +10,8 @@ struct A {};
 
 template <typename T>
 concept nec = requires {  //requires expression
-    //typename Tclass<T>;
-    Tclass<T> {};
+    //typename Tclass<T>; //type requirement
+    Tclass<T> {};  //simple requirement
 };
 
 int main()
