@@ -1,10 +1,10 @@
-//concept necval below uses a requires expression.
+//concept HasValueType below uses a requires expression.
 // the requires expression has a type requirement.
 // type C should have a nested type named value_type
 
 template<typename C>
-concept necval = requires {
-    typename C::value_type;  
+concept HasValueType = requires {
+    typename C::value_type;
 };
 
 struct A
@@ -15,18 +15,26 @@ struct A
 struct B {};
 
 template <typename T>
-requires necval<T>
+requires HasValueType<T>
 class Myclass {
 
 };
 
-void func(necval auto);
+void foo(HasValueType auto);
+
+template<HasValueType T>
+void bar(T);
+
+#include <vector>
 
 int main()
 {
-    //Myclass<int> x; // error
+    //Myclass<int> m1; // error
 
-    Myclass<A> y; // ok
-    func(A{}); //ok
-    //func(B{}); // error
+    Myclass<A> m2; // ok
+    foo(A{}); //ok
+    //foo(B{}); // error
+    bar(A{});
+    Myclass<std::vector<int>> m3;
+    //...
 }
