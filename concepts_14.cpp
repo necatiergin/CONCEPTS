@@ -2,7 +2,7 @@
 
 template <typename F>
 concept invoke_integral = requires (F f) {
-    { f() } -> std::integral;
+    { f() } -> std::integral; //compound requirement
 };
 
 template <invoke_integral F>
