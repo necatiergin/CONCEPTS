@@ -4,12 +4,12 @@ concept has_foo = requires (T t) {
 };
 
 template <typename T>
-concept coord = has_foo<T> && requires (T t) {
+concept has_foo_bar = has_foo<T> && requires (T t) {
     t.bar();
 };
 
 void func(has_foo auto) {}
-void func(coord auto) {}
+void func(has_foo_bar auto) {}
 
 struct A {
     int foo();
