@@ -1,14 +1,14 @@
 template <typename T>
-concept has_x = requires (T t) {
+concept has_foo = requires (T t) {
     t.foo();
 };
 
 template <typename T>
-concept coord = has_x<T> && requires (T t) {
+concept coord = has_foo<T> && requires (T t) {
     t.bar();
 };
 
-void func(has_x auto) {}
+void func(has_foo auto) {}
 void func(coord auto) {}
 
 struct A {
