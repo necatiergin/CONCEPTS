@@ -8,13 +8,13 @@
 template <std::convertible_to<bool> T>
 void foo(T x)
 {
-	std::cout << static_cast<bool>(bar) << '\n';
+	std::cout << static_cast<bool>(x) << '\n';
 }
 
 int main()
 {
 	boolalpha(std::cout);
-	int x{243};
+	int x{ 243 };
 
 	foo(x);
 	foo(&x);
