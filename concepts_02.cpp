@@ -4,7 +4,7 @@
 
 template<typename C>
 concept HasValueType = requires {
-    typename C::value_type;
+    typename C::value_type; // type requirement
 };
 
 struct A
