@@ -2,10 +2,10 @@ _C++20_ standardı ile dile eklenen _concept_'ler ve bunlara ilişkin araçlar v
 
 
 #### concept'ler hangi faydaları sağlıyor?
-- template kodları yazmayı, okumayı ve _debug_ etmeyi kolaylaştırıyor:  _TMP for everybody_
-- template parametrelerine yönelik kısıtlamalar arayüzün _(interface)_ bir bileşeni hale geliyor. Bir _template_'a baktığımızda onun kısıtlamalarını doğrudan görebiliyoruz.
+- _template_ kodları yazmayı, okumayı ve _debug_ etmeyi kolaylaştırıyor:  _TMP for everybody_
+- _template_ parametrelerine yönelik kısıtlamalar arayüzün _(interface)_ bir bileşeni hale geliyor. Bir _template_'a baktığımızda onun kısıtlamalarını doğrudan görebiliyoruz.
 - _function overloading_ mekanizamasını destekliyor. Farklı kısıtlamalara göre fonksiyonları _overload_ edebiliyoruz.
-- template argümanlarına yönelik hata mesajları çok daha kısa ve anlaşılır hale geliyor.
+- _template_ argümanlarına yönelik hata mesajları çok daha kısa ve anlaşılır hale geliyor.
 - _concept_'ler generik programlama tarafında _"placeholder"_ olarak kullanılabiliyor.
 - kendi _concept_'lerimizi oluşturabiliyoruz.
 - fonksiyon şablonlarında, sınıf şablonlarında, tür eş isim şablonlarında ve değişken şablonlarında kullanabiliyoruz.
@@ -38,7 +38,7 @@ void foo(T x) {
 
 Kısıtlamaların sıralaması bir anlam farklılığı oluşturmaz.<br>
 Kısıtlamalarda || operatörü seyrek olarak kullanılır. Sık kullanımı derleme zamanını uzatabilir.<br>
-_requires clause_'da birden fazla template parametresi kullanılabilir. Böylece _template_ parametreleri arasındaki ilişkiler kısıtlanabilir:
+_requires clause_'da birden fazla _template_ parametresi kullanılabilir. Böylece _template_ parametreleri arasındaki ilişkiler kısıtlanabilir:
 
 ```cpp
 #include <type_traits>
