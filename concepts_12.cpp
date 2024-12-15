@@ -17,7 +17,8 @@ auto get_max(auto a, auto b)
 	return b < a ? a : b; 
 }
 
-auto get_max(Pointer auto x, Pointer auto y) requires Comparable<decltype(*x), decltype(*y)>
+auto get_max(Pointer auto x, Pointer auto y) 
+requires Comparable<decltype(*x), decltype(*y)>
 {
 	return get_max(*x, *y);
 }
@@ -30,6 +31,5 @@ int main()
 	int* py = &y;
 
 	auto max = get_max(px, py);
-
 	std::cout << "max = " << max << '\n';
 }
