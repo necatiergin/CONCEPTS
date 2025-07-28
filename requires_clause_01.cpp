@@ -9,7 +9,7 @@ void foo(T x) {
 	
 }
 
-// to satisfy the constarints
+// to satisfy the constaints
 // a) sizeof(T) should be greater than 2
 // b) type T should have a nested type named value_type
 // c) type T should satisfy the standard concept  std::input_iterator
