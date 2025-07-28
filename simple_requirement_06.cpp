@@ -2,7 +2,7 @@
 
 template<typename T>
 concept Con = requires {
-	std::floating_point<T>; // must be wrong
+	std::floating_point<T>; 
 };
 
 int main()
