@@ -8,7 +8,6 @@ concept Clock = requires (T clock)
 	clock.time();
 };
 
-
 struct Myclock {
 	void start();
 	void stop();
@@ -19,8 +18,6 @@ template <Clock C>
 class Myclass {
 
 };
-
-
 
 int main()
 {
