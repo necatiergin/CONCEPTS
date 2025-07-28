@@ -6,8 +6,8 @@ template <typename T>
 concept nec = requires(T p)
 {
     p == nullptr; //unevaluated expression.
-    //ifadenın kendisi geçerli olmalı.
-    //ifadenin değerinin true ya da false olması önemsiz
+    //expression must be valid
+    // the result of expression may be true or false
 };
 
 int main() {
