@@ -8,10 +8,19 @@ void foo(Ts... args)
     std::cout << sizeof...(args) << '\n';
 }
 
+template <std::integral ... Ts>
+void bar(Ts... args)
+{
+    std::cout << sizeof...(args) << '\n';
+}
+
 int main()
 {
     foo(10, 20, 30);
     foo('A', 10L, 20);
+    bar(10, 20, 30);
+    bar('A', 10L, 20);
 
     // foo(10, 3.14); // constraint not satisfied
+    // bar(10, 3.14); // constraint not satisfied
 }
