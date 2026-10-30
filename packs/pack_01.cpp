@@ -9,4 +9,5 @@ class Myclass {
 };
 
 Myclass<int, long, short> x1; //valid
+Myclass<> x2; // valid - vacuous truth
 Myclass<int, double, char> x2; // invalid
