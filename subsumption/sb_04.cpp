@@ -23,7 +23,8 @@ struct B {
     int bar();
 };
 
-int main() {
+int main() 
+{
     func(A{}); // valid
-    func(Y{}); // error - ambiguous
+    func(B{}); // error - ambiguous
 }
